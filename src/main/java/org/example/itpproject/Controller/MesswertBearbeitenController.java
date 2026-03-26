@@ -9,11 +9,14 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class MesswertBearbeitenController {
+
+    Stage stage;
 
     @FXML
     private CheckBox cbMessanomalie;
@@ -38,23 +41,27 @@ public class MesswertBearbeitenController {
 
     @FXML
     void onActionAbbrechen(ActionEvent event) {
-
+        stage.close();
     }
 
     @FXML
     void onActionKundeAuswaehlen(ActionEvent event) {
-
+        KundeAuswaehlenController.showController();
     }
 
     @FXML
     void onActionOk(ActionEvent event) {
-
+        stage.close();
     }
 
-    public static void showController(Stage stage) {
+    public static void showController() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(KundeAuswaehlenController.class.getResource("/org/example/itpproject/messwert-bearbeiten.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
+            MesswertBearbeitenController ctrl = fxmlLoader.getController();
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            ctrl.stage = stage;
             stage.setTitle("Kunde auswählen");
             stage.setScene(scene);
             stage.show();

@@ -9,11 +9,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class KundeBearbeitenController {
+
+    Stage stage;
 
     @FXML
     private ToggleGroup Geschlecht;
@@ -41,21 +44,25 @@ public class KundeBearbeitenController {
 
     @FXML
     void onActionAbbrechen(ActionEvent event) {
-
+        stage.close();
     }
 
     @FXML
     void onActionOk(ActionEvent event) {
-
+        stage.close();
     }
 
-    public static void showController(Stage stage) {
+    public static void showController() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(KundeAuswaehlenController.class.getResource("/org/example/itpproject/kunde-bearbeiten.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
+            KundeBearbeitenController ctrl = fxmlLoader.getController();
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            ctrl.stage = stage;
             stage.setTitle("Kunde auswählen");
             stage.setScene(scene);
-            stage.show();
+            stage.showAndWait();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -8,6 +8,6 @@ public class KundeAuswaehlenApplication extends Application {
 
     @Override
     public void start(Stage stage) {
-       KundeAuswaehlenController.showController(stage);
+       KundeAuswaehlenController.showController();
     }
 }

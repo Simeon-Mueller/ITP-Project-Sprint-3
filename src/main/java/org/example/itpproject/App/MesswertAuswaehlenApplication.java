@@ -8,6 +8,6 @@ public class MesswertAuswaehlenApplication extends Application {
 
     @Override
     public void start(Stage stage) {
-        MesswertAuswaehlenController.showController(stage);
+        MesswertAuswaehlenController.showController();
     }
 }

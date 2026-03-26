@@ -8,6 +8,6 @@ public class MesswertBearbeitenApplication extends Application {
 
     @Override
     public void start(Stage stage) {
-        MesswertBearbeitenController.showController(stage);
+        MesswertBearbeitenController.showController();
     }
 }
