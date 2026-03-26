@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="320.0" maxWidth="510.0" minHeight="320.0" minWidth="510.0" prefHeight="320.0" prefWidth="510.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1">
+<GridPane maxHeight="320.0" maxWidth="510.0" minHeight="320.0" minWidth="510.0" prefHeight="320.0" prefWidth="510.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.itpproject.Controller.MesswertAuswaehlenController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="40.0" minWidth="10.0" prefWidth="40.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="10.0" prefWidth="350.0" />
